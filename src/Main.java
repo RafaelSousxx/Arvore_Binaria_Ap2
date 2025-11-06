@@ -1,15 +1,26 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        ArvoreBinariaDeBusca arvore = new ArvoreBinariaDeBusca();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        int[] valores = {2, 0, 4, 8}; // RA: 2404048 (sem repetições)
+
+        for (int v : valores)
+            arvore.inserir(v);
+
+        System.out.println("===== ÁRVORE BINÁRIA DE BUSCA =====");
+        System.out.println("RA: 2404048");
+        System.out.println("Raiz: " + arvore.raiz.valor);
+        System.out.print("Folhas (Nós sem filhos): ");
+        arvore.exibirFolhas(arvore.raiz);
+        System.out.println("\nAltura da Árvore: " + arvore.altura(arvore.raiz));
+
+        System.out.print("\nPré-Ordem: ");
+        arvore.preOrdem(arvore.raiz);
+        System.out.print("\nEm Ordem: ");
+        arvore.emOrdem(arvore.raiz);
+        System.out.print("\nPós-Ordem: ");
+        arvore.posOrdem(arvore.raiz);
+
+        System.out.println("\n===================================");
     }
 }
